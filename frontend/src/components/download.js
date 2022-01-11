@@ -1,9 +1,9 @@
 
 const Download = () => {
     return(
-        <div>
+        <div className="up-down-edit">
             <div className="upload-pic-area">
-            <button type="button" className="btn-upload">Upload image</button>
+            <button type="button" className="btn-upload">Download image</button>
             </div>
         </div>
     )

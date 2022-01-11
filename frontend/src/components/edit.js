@@ -1,6 +1,6 @@
 const Upload = () => {
     return(
-        <div>
+        <div className="up-down-edit">
             
         </div>
     )
