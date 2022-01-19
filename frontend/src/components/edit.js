@@ -1,6 +1,35 @@
-import react from 'react';
-
+import react, { useState, useEffect } from 'react';
+import imagePath from '../../../backend/images'
 const Edit = () => {
+    const [imageName, setImageName] = useState("")
+    const [data, setData]  = useState([{}])
+
+    const resizeImage = async() => {
+        await fetch("/images").then(
+          res => res.json()
+        ).then(
+            data => {
+                setImageName(data)
+                console.log(imageName)
+            }
+        )
+        
+    }
+    
+
+    // useEffect(() => {
+    //     console.log("test")
+    //     fetch("/members").then(
+    //       res => res.json()
+          
+    //     ).then(
+    //         data => {
+    //             setData(data)
+    //             console.log(data)
+    //         }
+    //     )
+    // }, [])
+
     return(
         <>
         {/* <div className="up-down-edit" id="displayInlineBlock">
@@ -24,7 +53,9 @@ const Edit = () => {
                 <table width="100%">
                     <tr>
                         <td width="50%" >
-                            <div className="editPic"></div>
+                            <div className="editPic">
+                                <img src= {`${imagePath}/${imageName.image_name}`}/>
+                            </div>
                         </td>
                         <td width="25%">
                             <tr>RESOLUTION
@@ -79,7 +110,11 @@ const Edit = () => {
                         </td>
                     </tr>
                 </table>
-                <button>SAVE</button>
+                
+                <button onClick={resizeImage}>SAVE</button>
+                
+                
+                
             </div>
             
         </div>
