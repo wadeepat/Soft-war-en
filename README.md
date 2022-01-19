@@ -37,6 +37,9 @@ python -m pip install Pillow
 -nodemon index.js #in api
 
 ver -use database for xampp-
+
 Create database name "saveimage"
+
 Create table name "users"
+
 ![image](https://user-images.githubusercontent.com/59278107/150075300-ca2244ee-3870-44b0-bb8f-9d79f0a8e6ea.png)
