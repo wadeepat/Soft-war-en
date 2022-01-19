@@ -1,5 +1,5 @@
 import react, { useState, useEffect } from 'react';
-import imagePath from '../../../backend/images'
+import imagePath from '../../src/images/newPic.jpg'
 const Edit = () => {
     const [imageName, setImageName] = useState("")
     const [data, setData]  = useState([{}])
@@ -54,7 +54,7 @@ const Edit = () => {
                     <tr>
                         <td width="50%" >
                             <div className="editPic">
-                                <img src= {`${imagePath}/${imageName.image_name}`}/>
+                                <img src= {imagePath}/>
                             </div>
                         </td>
                         <td width="25%">
