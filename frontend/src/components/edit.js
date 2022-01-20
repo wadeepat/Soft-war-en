@@ -1,34 +1,25 @@
 import react, { useState, useEffect } from 'react';
-import imagePath from '../../src/images/newPic.jpg'
+import imagePath from '../images/newPic.jpg'
+
 const Edit = () => {
+    // const imagePath = '../../src/images/newPic.jpg'
     const [imageName, setImageName] = useState("")
     const [data, setData]  = useState([{}])
 
-    const resizeImage = async() => {
-        await fetch("/images").then(
-          res => res.json()
-        ).then(
-            data => {
-                setImageName(data)
-                console.log(imageName)
-            }
-        )
-        
-    }
-    
+    const [allVariables, setAllVariables] = useState({
+        resolution: 64,
+        bit: 8
+    });
 
-    // useEffect(() => {
-    //     console.log("test")
-    //     fetch("/members").then(
-    //       res => res.json()
-          
-    //     ).then(
-    //         data => {
-    //             setData(data)
-    //             console.log(data)
-    //         }
-    //     )
-    // }, [])
+    const resizeImage = async() => {
+        const res = await fetch(`/images/${allVariables.resolution}/${allVariables.bit}`);
+        const data = await res.json();
+        setImageName(data)
+    }
+
+    useEffect(() => {
+        resizeImage();
+    }, [])
 
     return(
         <>
@@ -54,13 +45,16 @@ const Edit = () => {
                     <tr>
                         <td width="50%" >
                             <div className="editPic">
-                                <img src= {imagePath}/>
+                                <img src= {imagePath} width= "75%"/>
                             </div>
                         </td>
                         <td width="25%">
-                            <tr>RESOLUTION
+                            <tr>RESOLUTION: {allVariables.resolution}
                                 <div class="slidecontainer">
-                                    <input type="range" min="1" max="100" class="slider" id="myRange"/>
+                                    <input type="range" min="1" max="100" class="slider" id="myRange" 
+                                        onChange={ e => setAllVariables({ resolution: e.target.value }) }
+                                    />
+                                    {/* <p>{allVariables.resolution}</p> */}
                                 </div>
                             </tr>
                             <tr>EYES
