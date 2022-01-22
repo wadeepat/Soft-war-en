@@ -1,9 +1,8 @@
 from distutils.log import debug
 from importlib import resources
-from flask import Flask
+from flask import Flask, send_file
 
 import generatePixel
-import sys
 # from flask_cors import CORS
 
 app = Flask(__name__)
@@ -23,6 +22,12 @@ def get_image(resolution,bit,palette):
     generatePixel.resizeImage(resolution,bit,palette)
     # print(resolution, file=sys.stderr)
     return {"image_name": "shark.jpg"}
+
+
+@app.route('/downloadpic')
+def download_file():
+    pic = "../frontend/src/images/newPic.png"
+    return send_file(pic,as_attachment=True)
 
 if __name__ == "__main__":
     app.run(debug=True)
