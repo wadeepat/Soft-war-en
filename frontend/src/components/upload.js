@@ -54,7 +54,6 @@ function Upload() {
 
         <div className="upload-pic-area">
           <button type="submit" className="btn btn-dark"onClick={()=>submit()} > Save </button>
-          
         </div>
       </div>
     </div>
