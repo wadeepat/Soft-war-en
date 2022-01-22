@@ -3,6 +3,7 @@ from importlib import resources
 from flask import Flask
 
 import generatePixel
+import sys
 # from flask_cors import CORS
 
 app = Flask(__name__)
@@ -17,9 +18,10 @@ app = Flask(__name__)
 def members():
     return {"members": ["member1","member2","member3"]}
 
-@app.route('/images')
-def get_image():
-    generatePixel.resizeImage()
+@app.route('/images/<resolution>/<bit>/<palette>')
+def get_image(resolution,bit,palette):
+    generatePixel.resizeImage(resolution,bit,palette)
+    # print(resolution, file=sys.stderr)
     return {"image_name": "shark.jpg"}
 
 if __name__ == "__main__":

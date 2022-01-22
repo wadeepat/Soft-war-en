@@ -1,15 +1,25 @@
 from PIL import Image
+import sys
+def resizeImage(resolution,bit,palette):
+    resolution = int(resolution)
+    bit = int(bit)
+    img = Image.open("../public_html/uploads/mona.jpg")
 
-def resizeImage():
-    resolution = 64
-    myImage = Image.open("../public_html/uploads/1642244711846-258836425_926269641604849_4976627869693203958_n.jpg")
+    # change bit depth of image
+    imgChangeBD = img.convert("P", palette = Image.ADAPTIVE, colors = bit)
 
-    smallImage = myImage.resize( (resolution,resolution), Image.BILINEAR)
+    #change PALETTE
+    if(palette != 'NONE'):
+        imgChangeBD = imgChangeBD.convert(palette)
+    # resize image by resolution
+    smallImage = imgChangeBD.resize( (resolution,resolution), Image.BILINEAR)
+    resultImage = smallImage.resize(img.size, Image.NEAREST)
+    
 
-    resultImage = smallImage.resize(myImage.size, Image.NEAREST)
-    # resultImage = myImage.resize((16,16))
+    #save image
+    resultImage.save("../frontend/src/images/newPic.png")
 
-    resultImage.save("../frontend/src/images/newPic.jpg")
+    # print(resolution, file=sys.stderr)
 
 if __name__ == '__main__':
     resizeImage()
