@@ -2,14 +2,18 @@ from PIL import Image
 import sys
 def resizeImage(resolution,bit):
     resolution = int(resolution)
-    myImage = Image.open("../public_html/uploads/mona.jpg")
+    bit = int(bit)
+    img = Image.open("../public_html/uploads/mona.jpg")
 
-    smallImage = myImage.resize( (resolution,resolution), Image.BILINEAR)
+    # change bit depth of image
+    imgChangeBD = img.convert("P", palette = Image.ADAPTIVE, colors = bit)
 
-    resultImage = smallImage.resize(myImage.size, Image.NEAREST)
+    smallImage = imgChangeBD.resize( (resolution,resolution), Image.BILINEAR)
+
+    resultImage = smallImage.resize(img.size, Image.NEAREST)
     # resultImage = myImage.resize((16,16))
 
-    resultImage.save("../frontend/src/images/newPic.jpg")
+    resultImage.save("../frontend/src/images/newPic.png")
 
     # print(resolution, file=sys.stderr)
 

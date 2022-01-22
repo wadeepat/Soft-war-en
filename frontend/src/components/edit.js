@@ -1,5 +1,5 @@
 import react, { useState, useEffect } from 'react';
-import imagePath from '../images/newPic.jpg'
+import imagePath from '../images/newPic.png'
 
 const Edit = () => {
     // const imagePath = '../../src/images/newPic.jpg'
@@ -52,17 +52,25 @@ const Edit = () => {
                             <tr>RESOLUTION: {allVariables.resolution}
                                 <div class="slidecontainer">
                                     <input type="range" min="1" max="100" class="slider" id="myRange" 
-                                        onChange={ e => setAllVariables({ resolution: e.target.value }) }
+                                        onChange={ e => setAllVariables({ 
+                                            ...allVariables, 
+                                            resolution: e.target.value 
+                                        })}
                                     />
                                     {/* <p>{allVariables.resolution}</p> */}
                                 </div>
                             </tr>
-                            <tr>EYES
+                            <tr>Bits: {allVariables.bit}
                                 <div class="slidecontainer">
-                                    <input type="range" min="1" max="100" class="slider" id="myRange"/>
+                                    <input type="range" min="1" max="24" class="slider" id="myRange"
+                                        onChange={ e => setAllVariables({ 
+                                            ...allVariables,
+                                            bit: e.target.value 
+                                        })}
+                                    />
                                 </div>
                             </tr>
-                            <tr>EYEBROWS
+                            <tr>EYES
                                 <div class="slidecontainer">
                                     <input type="range" min="1" max="100" class="slider" id="myRange"/>
                                 </div>
