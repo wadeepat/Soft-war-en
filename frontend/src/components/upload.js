@@ -31,8 +31,11 @@ function Upload() {
       if(res.data.success === 1){
         setSuccess("Image upload successfully");
       }
-
+      window.location.href ="/edit";
     })
+    //jump to page edit
+    
+
   }
 
   return (
@@ -50,9 +53,7 @@ function Upload() {
       : null}
 
         <div className="upload-pic-area">
-          <a href="/edit">
-            <button type="submit" className="btn btn-dark"onClick={()=>submit()} > Save </button>
-          </a>
+          <button type="submit" className="btn btn-dark"onClick={()=>submit()} > Save </button>
           
         </div>
       </div>
