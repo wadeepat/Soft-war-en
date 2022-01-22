@@ -8,11 +8,12 @@ const Edit = () => {
 
     const [allVariables, setAllVariables] = useState({
         resolution: 64,
-        bit: 8
+        bit: 8,
+        palette: 'NONE'
     });
 
     const resizeImage = async() => {
-        const res = await fetch(`/images/${allVariables.resolution}/${allVariables.bit}`);
+        const res = await fetch(`/images/${allVariables.resolution}/${allVariables.bit}/${allVariables.palette}`);
         const data = await res.json();
         setImageName(data)
     }
@@ -60,9 +61,9 @@ const Edit = () => {
                                     {/* <p>{allVariables.resolution}</p> */}
                                 </div>
                             </tr>
-                            <tr>Bits: {allVariables.bit}
+                            <tr>Bit: {allVariables.bit}
                                 <div class="slidecontainer">
-                                    <input type="range" min="1" max="24" class="slider" id="myRange"
+                                    <input type="range" min="2" max="24" class="slider" id="myRange"
                                         onChange={ e => setAllVariables({ 
                                             ...allVariables,
                                             bit: e.target.value 
@@ -81,6 +82,24 @@ const Edit = () => {
                                         <select name = "dropdown">
                                             <option value = "25%">25%</option>
                                             <option value = "50%">50%</option>
+                                            <option value = "75%">75%</option>
+                                            <option value = "100%">100%</option>
+                                        </select>
+                                    </form>
+                                </p>
+                            </tr>
+                            <tr>
+                                <p>PALETTE
+                                    <form>
+                                        <select name = "dropdown" 
+                                            onChange={ e => setAllVariables({ 
+                                                ...allVariables,
+                                                palette: e.target.value 
+                                            })}
+                                        >
+                                            <option value = "NONE">NONE</option>
+                                            <option value = "L">GrayScale</option>
+                                            <option value = "1">Black and White</option>
                                             <option value = "75%">75%</option>
                                             <option value = "100%">100%</option>
                                         </select>

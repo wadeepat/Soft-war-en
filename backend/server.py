@@ -18,9 +18,9 @@ app = Flask(__name__)
 def members():
     return {"members": ["member1","member2","member3"]}
 
-@app.route('/images/<resolution>/<bit>')
-def get_image(resolution,bit):
-    generatePixel.resizeImage(resolution,bit)
+@app.route('/images/<resolution>/<bit>/<palette>')
+def get_image(resolution,bit,palette):
+    generatePixel.resizeImage(resolution,bit,palette)
     # print(resolution, file=sys.stderr)
     return {"image_name": "shark.jpg"}
 
