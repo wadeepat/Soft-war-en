@@ -125,14 +125,14 @@ const Edit = () => {
                             </tr>
                             <tr>
                                 <p></p>
-                                <button>UNDO</button>
-                                <button>REDO</button>
+                                <button className="btn-undo">UNDO</button>
+                                <button className="btn-redo">REDO</button>
                             </tr>
                         </td>
                     </tr>
                 </table>
                 
-                <button onClick={resizeImage}>SAVE</button>
+                <button className="btn-up-save" onClick={resizeImage}>SAVE</button>
                 
                 
                 

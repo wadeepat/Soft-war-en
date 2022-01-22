@@ -44,7 +44,7 @@ function Upload() {
       <div className="up-down-edit" align = 'center'>
       {isSucces !== null ? <h4> {isSucces} </h4> :null }
         <div className="form-row" align = 'center'>
-          <label >Select Image :</label>
+          <label  >Select Image </label>
           <input type="file" className="form-control"  name="myImage"  onChange={handleInputChange} />
         </div>
         
@@ -53,7 +53,7 @@ function Upload() {
       : null}
 
         <div className="upload-pic-area">
-          <button type="submit" className="btn btn-dark"onClick={()=>submit()} > Save </button>
+          <button type="submit" className="btn-up-save"onClick={()=>submit()} > SAVE </button>
         </div>
       </div>
     </div>

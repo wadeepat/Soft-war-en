@@ -5,6 +5,35 @@ import 'bootstrap/dist/css/bootstrap.css'
 const MyNavbar = () => { 
     return (
         <div>
+           <Navbar className="navBar"  fixed="top"  expand="lg"  >
+             <Navbar.Brand>
+               <img src="/logo512.png" height="40" width="40"></img>
+              SOFT(WAR)EN
+             </Navbar.Brand>
+              <Navbar.Toggle/>
+              <Navbar.Collapse>
+                <Nav className="nav">
+                <Nav.Link href="/upload">Upload</Nav.Link>
+                <Nav.Link href="/edit">Edit</Nav.Link>
+                <Nav.Link href="/download">Download</Nav.Link>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="text" placeholder="Search"/>
+                  <button class="btn btn-outline-success" type="button">Search</button>
+                </form>
+              </Nav>
+              </Navbar.Collapse>
+           </Navbar>
+           
+        </div>
+      );
+}
+
+export default MyNavbar;
+
+/* origin version
+const MyNavbar = () => { 
+    return (
+        <div>
            <Navbar className="navBar"  fixed="top"  expand="lg" bg="light" >
              <Navbar.Brand>
                <img src="/logo512.png" height="40" width="40"></img>
@@ -34,6 +63,4 @@ const MyNavbar = () => {
            
         </div>
       );
-}
-
-export default MyNavbar;
+}*/

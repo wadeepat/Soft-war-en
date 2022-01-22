@@ -8,7 +8,7 @@ const Download = () => {
             <div className="upload-pic-area">
             <img className="previewimg"  src='http://localhost:5000/downloadpic'/>
             <a href='http://localhost:5000/downloadpic'>
-                <button type="button" className="btn-upload" >Download image</button>
+                <button type="button" className="btn-download" >Download image</button>
             </a>
             </div>
 

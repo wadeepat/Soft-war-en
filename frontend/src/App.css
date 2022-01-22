@@ -33,11 +33,16 @@
   margin-right: auto;
   margin-top: 50px;
 }
-.btn-upload { 
+.btn-download { 
   color: rgb(0, 0, 0);
-  background-color: rgb(233, 235, 234);
+  background: rgb(242,249,126);
+  background: linear-gradient(50deg, rgba(242,249,126,1) 0%, rgba(134,241,143,1) 100%);
   margin-top: 520px;
   margin-left: 250px;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  border-color: transparent;
 }
 
 .up-down-edit {
@@ -87,4 +92,38 @@
 tr{
   vertical-align: top;
   text-align: left;
+}
+
+.btn-up-save {
+  background: rgb(107,239,246);
+  background: linear-gradient(50deg, rgba(107,239,246,1) 0%, rgba(230,114,240,1) 100%);
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  border-color: transparent;
+}
+
+.navBar {
+  background: rgb(244,250,146);
+  background: linear-gradient(60deg, rgba(244,250,146,1) 0%, rgba(244,157,237,1) 100%);
+}
+
+.btn-undo {
+  background: rgb(107,246,172);
+background: linear-gradient(50deg, rgba(107,246,172,1) 0%, rgba(114,212,240,1) 100%);
+  width: 150px;
+  height: 30px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-color: transparent;
+}
+
+.btn-redo {
+  background: rgb(245,174,130);
+  background: linear-gradient(50deg, rgba(245,174,130,1) 0%, rgba(243,244,123,1) 100%);
+  width: 150px;
+  height: 30px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-color: transparent;
 }
