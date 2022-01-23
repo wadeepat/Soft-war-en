@@ -47,7 +47,7 @@ function Upload() {
           <label >Select Image :</label>
           <input type="file" className="form-control"  name="myImage"  onChange={handleInputChange} />
         </div>
-        
+      
       {userInfo.filepreview !== null ? 
         <img className="previewimg"  src={userInfo.filepreview} alt="UploadImage"  />
       : null}
