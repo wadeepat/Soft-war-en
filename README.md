@@ -26,6 +26,8 @@ pip install Flask
 
 python -m pip install Pillow
 
+pip install opencv-python
+
 ## run server
 
 -npm start

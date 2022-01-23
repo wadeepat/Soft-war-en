@@ -21,7 +21,7 @@ const storage2 = multer.diskStorage({
     destination: path.join(__dirname, '../frontend/src/', 'images'),
     filename: function (req, file, cb) {   
         // null as first argument means no error
-        cb(null,file.originalname = "newPic.png") 
+        cb(null,file.originalname = "SOFTwarEN.png") 
     }
 })
 

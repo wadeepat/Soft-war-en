@@ -1,8 +1,8 @@
 import react, { useState, useEffect } from 'react';
-import imagePath from '../images/newPic.png'
+import imagePath from '../images/SOFTwarEN.png'
 
 const Edit = () => {
-    // const imagePath = '../../src/images/newPic.jpg'
+    // const imagePath = '../../src/images/SOFTwarEN.jpg'
     const [imageName, setImageName] = useState("")
     const [data, setData]  = useState([{}])
 
