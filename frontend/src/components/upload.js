@@ -31,9 +31,10 @@ function Upload() {
       if(res.data.success === 1){
         setSuccess("Image upload successfully");
       }
-      window.location.href ="/edit";
+      
     })
     //jump to page edit
+    window.location.href ="/edit";
     
 
   }

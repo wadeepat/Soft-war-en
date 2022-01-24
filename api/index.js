@@ -46,14 +46,14 @@ app.post('/imageupload', async (req, res) => {
                 return res.send(err);
             }
 
-            const classifiedsadd = {
-				image: req.file.filename
-			};
-            const sql = "INSERT INTO users SET ?";
-            connection.query(sql, classifiedsadd, (err, results) => {  if (err) throw err;
-				res.json({ success: 1 })      
-                return;
-			});  
+            // const classifiedsadd = {
+			// 	image: req.file.filename
+			// };
+            // const sql = "INSERT INTO users SET ?";
+            // connection.query(sql, classifiedsadd, (err, results) => {  if (err) throw err;
+			// 	res.json({ success: 1 })      
+            //     return;
+			// });  
 
         }); 
 
