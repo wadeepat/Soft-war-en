@@ -11,7 +11,6 @@ const Download = () => {
                 <button type="button" className="btn-download" >Download image</button>
             </a>
             </div>
-
         </div>
     )
     }

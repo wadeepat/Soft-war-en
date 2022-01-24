@@ -14,17 +14,17 @@ def resizeImage(resolution,bit,palette):
     #change PALETTE
     if(palette == "BGR"):
         # imgCV = np.array(imgChangeBD)
-        img.save("../frontend/src/images/newPic.png")
-        imgCV = cv2.cvtColor(cv2.imread("../frontend/src/images/newPic.png"), cv2.COLOR_BGR2RGB)
+        img.save("../frontend/src/images/SOFTwarEN.png")
+        imgCV = cv2.cvtColor(cv2.imread("../frontend/src/images/SOFTwarEN.png"), cv2.COLOR_BGR2RGB)
         # imgChangeBD = Image.fromarray(imgCV)
-        cv2.imwrite("../frontend/src/images/newPic.png", imgCV)
-        img = Image.open("../frontend/src/images/newPic.png")
+        cv2.imwrite("../frontend/src/images/SOFTwarEN.png", imgCV)
+        img = Image.open("../frontend/src/images/SOFTwarEN.png")
     elif(palette != "NONE"):
         img = img.convert(palette)
     
     smallImage = img.resize( (resolution,resolution), Image.BILINEAR)
     resultImage = smallImage.resize(img.size, Image.NEAREST)
-    resultImage.save("../frontend/src/images/newPic.png")
+    resultImage.save("../frontend/src/images/SOFTwarEN.png")
     # resize image by resolution
     
     

@@ -31,9 +31,10 @@ function Upload() {
       if(res.data.success === 1){
         setSuccess("Image upload successfully");
       }
-      window.location.href ="/edit";
+      
     })
     //jump to page edit
+    window.location.href ="/edit";
     
 
   }
@@ -47,7 +48,7 @@ function Upload() {
           <label  >Select Image </label>
           <input type="file" className="form-control"  name="myImage"  onChange={handleInputChange} />
         </div>
-        
+      
       {userInfo.filepreview !== null ? 
         <img className="previewimg"  src={userInfo.filepreview} alt="UploadImage"  />
       : null}

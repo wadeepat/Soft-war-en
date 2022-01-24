@@ -21,7 +21,7 @@ def get_image(resolution,bit,palette):
 
 @app.route('/downloadpic')
 def download_file():
-    pic = "../frontend/src/images/newPic.png"
+    pic = "../frontend/src/images/SOFTwarEN.png"
     return send_file(pic,as_attachment=True)
 
 if __name__ == "__main__":
