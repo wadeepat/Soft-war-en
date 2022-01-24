@@ -157,6 +157,9 @@ const Edit = () => {
                 </table>
                 
                 <button className="btn-up-save" onClick={resizeImage}>SAVE</button>
+                <div>
+                    <button type="submit" className="btn-next" > NEXT </button>
+                </div>
                 
             </div>
             

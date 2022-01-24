@@ -5,10 +5,10 @@ import 'bootstrap/dist/css/bootstrap.css'
 const MyNavbar = () => { 
     return (
         <div>
-           <Navbar className="navBar"  fixed="top"  expand="lg"  >
+           <Navbar className="navBar "  fixed="top"  expand="lg"  >
              <Navbar.Brand>
                <img src="/logo512.png" height="40" width="40"></img>
-              SOFT(WAR)EN
+              <span className="logo-name">SOFT(WAR)EN</span>
              </Navbar.Brand>
               <Navbar.Toggle/>
               <Navbar.Collapse>
@@ -18,7 +18,7 @@ const MyNavbar = () => {
                 <Nav.Link href="/download">Download</Nav.Link>
                 <form class="d-flex">
                   <input class="form-control me-2" type="text" placeholder="Search"/>
-                  <button class="btn btn-outline-success" type="button">Search</button>
+                  <button class="btn btn-outline-light" type="button">Search</button>
                 </form>
               </Nav>
               </Navbar.Collapse>

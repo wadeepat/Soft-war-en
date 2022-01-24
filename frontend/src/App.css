@@ -33,10 +33,11 @@
   margin-right: auto;
   margin-top: 50px;
 }
+
+.btn-download:hover{ color: rgb(80, 80, 80);}
 .btn-download { 
-  color: rgb(0, 0, 0);
-  background: rgb(242,249,126);
-  background: linear-gradient(50deg, rgba(242,249,126,1) 0%, rgba(134,241,143,1) 100%);
+  color: rgb(255, 255, 255);
+  background: linear-gradient(50deg, rgba(186,117,242,255) 0%, rgba(95,198,191,255) 100%);
   margin-top: 520px;
   margin-left: 250px;
   width: 200px;
@@ -94,23 +95,38 @@ tr{
   text-align: left;
 }
 
+.btn-up-save:hover{ color:  rgb(66, 66, 66);}
 .btn-up-save {
-  background: rgb(107,239,246);
-  background: linear-gradient(50deg, rgba(107,239,246,1) 0%, rgba(230,114,240,1) 100%);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
   width: 200px;
   height: 50px;
   border-radius: 25px;
   border-color: transparent;
+  background: linear-gradient(50deg, rgba(217,143,255,255) 0%, rgba(140,186,255,255) 100%);
 }
+
+.btn-next:hover{ color:  rgb(66, 66, 66);}
+.btn-next {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  border-color: transparent;
+  background: linear-gradient(50deg, rgba(140,186,255,255) 0%, rgba(217,143,255,255) 100%);
+}
+
 
 .navBar {
-  background: rgb(244,250,146);
-  background: linear-gradient(60deg, rgba(244,250,146,1) 0%, rgba(244,157,237,1) 100%);
+  background: linear-gradient(60deg, rgba(156,177,255,255) 0%, rgba(210,147,255,255) 100%);
 }
 
+.nav a:hover { color: #fff !important; }
+
+
 .btn-undo {
-  background: rgb(107,246,172);
-background: linear-gradient(50deg, rgba(107,246,172,1) 0%, rgba(114,212,240,1) 100%);
+  background: rgba(140,186,255,255);
   width: 150px;
   height: 30px;
   border-top-left-radius: 10px;
@@ -119,11 +135,14 @@ background: linear-gradient(50deg, rgba(107,246,172,1) 0%, rgba(114,212,240,1) 1
 }
 
 .btn-redo {
-  background: rgb(245,174,130);
-  background: linear-gradient(50deg, rgba(245,174,130,1) 0%, rgba(243,244,123,1) 100%);
+  background: rgba(210,147,255,255);
   width: 150px;
   height: 30px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border-color: transparent;
+}
+
+.logo-name {
+  color: rgb(255, 253, 253) ;
 }
