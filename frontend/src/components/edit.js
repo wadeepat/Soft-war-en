@@ -1,5 +1,6 @@
 import react, { useState, useEffect } from 'react';
 import imagePath from '../images/SOFTwarEN.png'
+import { View } from 'react-native';
 
 const Edit = () => {
     // const imagePath = '../../src/images/SOFTwarEN.jpg'
@@ -71,14 +72,18 @@ const Edit = () => {
                         </td>
                         <td width="25%">
                             <tr>RESOLUTION: {allVariables.resolution}
-                                <div class="slidecontainer">
-                                    <input type="range" min="1" max="200" class="slider" id="myRange" value={allVariables.resolution}
-                                        onChange={ e => setAllVariables({ 
-                                            ...allVariables, 
-                                            resolution: e.target.value 
-                                        })}
-                                    />
-                                </div>
+                                <View style={{flexDirection:'row', alignItems:'center'}}>
+                                    <button>-</button>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="200" class="slider" id="myRange" value={allVariables.resolution}
+                                                onChange={ e => setAllVariables({ 
+                                                    ...allVariables, 
+                                                    resolution: e.target.value 
+                                                })}
+                                            />
+                                        </div>
+                                    <button>+</button>
+                                </View>
                             </tr>
                             <tr>Bit: {allVariables.bit}
                                 <button class = "btn btn-primary mx-2"
@@ -86,20 +91,27 @@ const Edit = () => {
                                 >
                                     Disable
                                 </button>
-                                <div class="slidecontainer">
-                                    <input type="range" min="2" max="24" class="slider" id="in_bit" value={allVariables.bit}
-                                        onChange={ e => setAllVariables({ 
-                                            ...allVariables,
-                                            bit: e.target.value 
-                                        })}
-                                    />
-                                </div>
-                               
+                                <View style={{flexDirection:'row', alignItems:'center'}}>
+                                    <button>-</button>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="2" max="24" class="slider" id="in_bit" value={allVariables.bit}
+                                                onChange={ e => setAllVariables({ 
+                                                    ...allVariables,
+                                                    bit: e.target.value 
+                                                })}
+                                            />
+                                        </div>
+                                    <button>+</button>
+                                </View>
                             </tr>
-                            <tr>EYES
-                                <div class="slidecontainer">
-                                    <input type="range" min="1" max="100" class="slider" id="myRange"/>
-                                </div>
+                            <tr>EYES 
+                                <View style={{flexDirection:'row', alignItems:'center'}}>
+                                    <button>-</button>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" class="slider" id="myRange"/>
+                                        </div>
+                                    <button>+</button>
+                                </View>
                             </tr>
                             <tr>
                                 <p>SIZE
@@ -133,19 +145,31 @@ const Edit = () => {
                         </td>
                         <td width="25%">
                             <tr>LIPS
-                                <div class="slidecontainer">
-                                    <input type="range" min="1" max="100" class="slider" id="myRange"/>
-                                </div>
+                                <View style={{flexDirection:'row', alignItems:'center'}}>
+                                    <button>-</button>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" class="slider" id="myRange"/>
+                                        </div>
+                                    <button>+</button>
+                                </View>
                             </tr>
                             <tr>CLOTHES
-                                <div class="slidecontainer">
-                                    <input type="range" min="1" max="100" class="slider" id="myRange"/>
-                                </div>
+                                <View style={{flexDirection:'row', alignItems:'center'}}>
+                                    <button>-</button>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" class="slider" id="myRange"/>
+                                        </div>
+                                    <button>+</button>
+                                </View>
                             </tr>
                             <tr>HAIR
-                                <div class="slidecontainer">
-                                    <input type="range" min="1" max="100" class="slider" id="myRange"/>
-                                </div>
+                                <View style={{flexDirection:'row', alignItems:'center'}}>
+                                    <button>-</button>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" class="slider" id="myRange"/>
+                                        </div>
+                                    <button>+</button>
+                                </View>
                             </tr>
                             <tr>
                                 <p></p>
