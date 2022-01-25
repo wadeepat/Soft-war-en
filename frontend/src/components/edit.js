@@ -67,7 +67,7 @@ const Edit = () => {
                     <tr>
                         <td width="50%" >
                             <div className="editPic">
-                                <img src= {imagePath} width= "75%"/>
+                                <img src= {imagePath} width= "75%" className="edit-img"/>
                             </div>
                         </td>
                         <td width="25%">
@@ -180,11 +180,19 @@ const Edit = () => {
                     </tr>
                 </table>
                 
-                <button className="btn-up-save" onClick={resizeImage}>SAVE</button>
-                <div>
-                    <button type="submit" className="btn-next" > NEXT </button>
-                </div>
-                
+            </div>
+            <div className="btn-set-3" >
+                <View style={{flexDirection:'row', alignItems:'center'}}>
+                        <div className="edit-previous-btn">
+                            <button type="submit" className="btn-previous" > Previous </button>
+                        </div>
+                        <div>
+                            <button className="btn-up-save" onClick={resizeImage}>Save</button>
+                        </div>
+                        <div>
+                            <button type="submit" className="btn-next" > Next </button>
+                        </div>
+                </View>
             </div>
             
         </div>

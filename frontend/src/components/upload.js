@@ -54,7 +54,7 @@ function Upload() {
       : null}
 
         <div className="upload-pic-area">
-          <button type="submit" className="btn-next"onClick={()=>submit()} > NEXT </button>
+          <button type="submit" className="btn-next"onClick={()=>submit()} > Next </button>
         </div>
       </div>
     </div>

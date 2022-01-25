@@ -1,4 +1,6 @@
 
+//import for frontend testing
+import imagePath from '../images/SOFTwarEN.png'
 
 const Download = () => {
 
@@ -6,13 +8,17 @@ const Download = () => {
         
         <div className="up-down-edit">
             <div className="upload-pic-area">
-            <img className="previewimg"  src='http://localhost:5000/downloadpic'/>
+            <img className="previewimg-down"  src='http://localhost:5000/downloadpic'/>
             <a href='http://localhost:5000/downloadpic'>
                 <button type="button" className="btn-download" >Download image</button>
             </a>
+            <div className="div-btn-pre-down">
+                <button type="submit" className="btn-previous" > Previous </button>
+            </div>
             </div>
         </div>
     )
     }
     
     export default Download;
+    /*'http://localhost:5000/downloadpic'*/
