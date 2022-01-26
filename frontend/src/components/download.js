@@ -1,7 +1,7 @@
 
 //import for frontend testing
 import imagePath from '../images/SOFTwarEN.png'
-
+import { Link } from 'react-router-dom'
 const Download = () => {
 
     return(
@@ -13,7 +13,9 @@ const Download = () => {
                 <button type="button" className="btn-download" >Download image</button>
             </a>
             <div className="div-btn-pre-down">
-                <button type="submit" className="btn-previous" > Previous </button>
+                <Link to = "/edit">
+                    <button type="submit" className="btn-previous" > Previous </button>
+                </Link>
             </div>
             </div>
         </div>

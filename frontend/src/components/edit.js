@@ -1,12 +1,13 @@
 import react, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 import imagePath from '../images/SOFTwarEN.png'
-import { View ,ActivityIndicator} from 'react-native';
+import { View} from 'react-native';
 
 const Edit = () => {
     // const imagePath = '../../src/images/SOFTwarEN.jpg'
     const [imageName, setImageName] = useState("")
     const [data, setData]  = useState([{}])
-
+    
     const [allVariables, setAllVariables] = useState({
         resolution: 64,
         bit: 8,
@@ -34,9 +35,6 @@ const Edit = () => {
             })
             bt.disabled = true;
         }
-
-        
-       
     }
 
     // useEffect(() => {
@@ -118,7 +116,7 @@ const Edit = () => {
                                     }             
                                     }>-</button>
                                         <div class="slidecontainer">
-                                            <input type="range" min="2" max="32" class="slider" id="in_bit" value={allVariables.bit}
+                                            <input type="range" min="2" max="256" class="slider" id="in_bit" value={allVariables.bit}
                                                 onChange={ e => setAllVariables({ 
                                                     ...allVariables,
                                                     bit: e.target.value 
@@ -216,13 +214,18 @@ const Edit = () => {
             <div className="btn-set-3" >
                 <View style={{flexDirection:'row', alignItems:'center'}}>
                         <div className="edit-previous-btn">
-                            <button type="submit" className="btn-previous" > Previous </button>
+                            <Link to = "/upload">
+                                <button type="submit" className="btn-previous" > Previous </button>
+                            </Link>
                         </div>
                         <div>
                             <button className="btn-up-save" onClick={resizeImage}>Save</button>
                         </div>
                         <div>
-                            <button type="submit" className="btn-next" > Next </button>
+                            <Link to = "/download">
+                                <button type="submit" className="btn-next" > Next </button>
+                            </Link>
+                            
                         </div>
                 </View>
             </div>

@@ -1,6 +1,7 @@
 
 import React,{useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Upload() {
   const [userInfo, setuserInfo] = useState({
@@ -54,7 +55,9 @@ function Upload() {
       : null}
 
         <div className="upload-pic-area">
-          <button type="submit" className="btn-next"onClick={()=>submit()} > Next </button>
+          <Link to ="/edit">
+            <button type="submit" className="btn-next"onClick={()=>submit()} > Next </button>
+          </Link>
         </div>
       </div>
     </div>
