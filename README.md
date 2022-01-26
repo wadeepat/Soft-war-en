@@ -28,6 +28,13 @@ python -m pip install Pillow
 
 pip install opencv-python
 
+## SETUP FRONEND
+
+#for VIEW
+npm install -g expo-cli
+npm install react-native-web
+
+
 ## run server
 
 -npm start
