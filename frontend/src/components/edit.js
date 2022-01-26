@@ -116,7 +116,7 @@ const Edit = () => {
                                     }             
                                     }>-</button>
                                         <div class="slidecontainer">
-                                            <input type="range" min="2" max="256" class="slider" id="in_bit" value={allVariables.bit}
+                                            <input type="range" min="2" max="32" class="slider" id="in_bit" value={allVariables.bit}
                                                 onChange={ e => setAllVariables({ 
                                                     ...allVariables,
                                                     bit: e.target.value 
