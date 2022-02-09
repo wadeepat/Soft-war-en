@@ -1,7 +1,6 @@
 from distutils.log import debug
 from importlib import resources
 from flask import Flask, send_file
-
 import generatePixel
 # from flask_cors import CORS
 
