@@ -2,6 +2,20 @@ from distutils.log import debug
 from importlib import resources
 from flask import Flask, send_file
 import generatePixel
+import pyrebase
+config = {
+  "apiKey": "AIzaSyCbZkvyvj1pm6ygYQjRil9usTR61GhNXiU",
+  "authDomain": "soft-war-en.firebaseapp.com",
+  "projectId": "soft-war-en",
+  "storageBucket": "soft-war-en.appspot.com",
+  "messagingSenderId": "202141520404",
+  "appId": "1:202141520404:web:5afe4e7f91a901fcda8d01",
+  "measurementId": "G-BZYGX0EBDD",
+  "databaseURL" : ""
+}
+firebase = pyrebase.initialize_app(config)
+storage = firebase.storage()
+path_on_cloud = "images/mona-1644247147331.png"
 # from flask_cors import CORS
 
 app = Flask(__name__)
@@ -21,6 +35,8 @@ def get_image(resolution,bit,palette):
 @app.route('/downloadpic')
 def download_file():
     pic = "../frontend/src/images/SOFTwarEN.png"
+    # pic = storage.child(path_on_cloud).download("SOFTwarEN-1644247147331.png")
+
     return send_file(pic,as_attachment=True)
 
 if __name__ == "__main__":
