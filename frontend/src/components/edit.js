@@ -134,15 +134,7 @@ const Edit = () => {
                                     }>+</button>
                                 </View>
                             </tr>
-                            <tr>EYES 
-                                <View style={{flexDirection:'row', alignItems:'center'}}>
-                                    <button>-</button>
-                                        <div class="slidecontainer">
-                                            <input type="range" min="1" max="100" class="slider" id="myRange"/>
-                                        </div>
-                                    <button>+</button>
-                                </View>
-                            </tr>
+                             
                             <tr>
                                 <p>SIZE
                                     <form>
@@ -178,25 +170,43 @@ const Edit = () => {
                                 <View style={{flexDirection:'row', alignItems:'center'}}>
                                     <button>-</button>
                                         <div class="slidecontainer">
-                                            <input type="range" min="1" max="100" class="slider" id="myRange"/>
+                                            <input type="range" min="1" max="100" class="slider" id="myRangeRed"/>
+                                        </div>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" class="slider" id="myRangeGreen"/>
+                                        </div>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" class="slider" id="myRangeBlue"/>
                                         </div>
                                     <button>+</button>
                                 </View>
                             </tr>
-                            <tr>CLOTHES
+                            <tr>EYEBROWS
                                 <View style={{flexDirection:'row', alignItems:'center'}}>
                                     <button>-</button>
                                         <div class="slidecontainer">
-                                            <input type="range" min="1" max="100" class="slider" id="myRange"/>
+                                            <input type="range" min="1" max="100" class="slider" id="myRangeRed"/>
+                                        </div>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" class="slider" id="myRangeGreen"/>
+                                        </div>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" class="slider" id="myRangeBlue"/>
                                         </div>
                                     <button>+</button>
                                 </View>
                             </tr>
-                            <tr>HAIR
+                            <tr>EYES
                                 <View style={{flexDirection:'row', alignItems:'center'}}>
                                     <button>-</button>
                                         <div class="slidecontainer">
-                                            <input type="range" min="1" max="100" class="slider" id="myRange"/>
+                                            <input type="range" min="1" max="100" class="slider" id="myRangeRed"/>
+                                        </div>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" class="slider" id="myRangeGreen"/>
+                                        </div>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" class="slider" id="myRangeBlue"/>
                                         </div>
                                     <button>+</button>
                                 </View>
