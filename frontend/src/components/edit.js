@@ -11,11 +11,14 @@ const Edit = () => {
     const [allVariables, setAllVariables] = useState({
         resolution: 64,
         bit: 8,
-        palette: 'NONE'
+        palette: 'NONE',
+        lips: [0,0,0],
+        eyebrows: [0,0,0],
+        eyes: [0,0,0]
     });
 
     const resizeImage = async() => {
-        const res = await fetch(`/images/${allVariables.resolution}/${allVariables.bit}/${allVariables.palette}`);
+        const res = await fetch(`/images/${allVariables.resolution}/${allVariables.bit}/${allVariables.palette}/${allVariables.lips}/${allVariables.eyebrows}/${allVariables.eyes}`);
         const data = await res.json();
         setImageName(data)
     }
@@ -168,47 +171,101 @@ const Edit = () => {
                         <td width="25%">
                             <tr>LIPS
                                 <View style={{flexDirection:'row', alignItems:'center'}}>
-                                    <button>-</button>
+                                    {/* <button>-</button> */}
                                         <div class="slidecontainer">
-                                            <input type="range" min="1" max="100" class="slider" id="myRangeRed"/>
+                                            B: {allVariables.lips[0]}
+                                            <input type="range" min="0" max="255" class="slider" id="myRangeBlue" value={allVariables.lips[0]} 
+                                                onChange={ e => setAllVariables({ 
+                                                    ...allVariables, 
+                                                    lips: [e.target.value,allVariables.lips[1],allVariables.lips[2]]
+                                                })}
+                                            />
                                         </div>
                                         <div class="slidecontainer">
-                                            <input type="range" min="1" max="100" class="slider" id="myRangeGreen"/>
+                                            G: {allVariables.lips[1]}
+                                            <input type="range" min="0" max="255" class="slider" id="myRangeGreen" value={allVariables.lips[1]} 
+                                                onChange={ e => setAllVariables({ 
+                                                    ...allVariables, 
+                                                    lips: [allVariables.lips[0],e.target.value,allVariables.lips[2]]
+                                                })}
+                                            />
                                         </div>
                                         <div class="slidecontainer">
-                                            <input type="range" min="1" max="100" class="slider" id="myRangeBlue"/>
+                                            R: {allVariables.lips[2]}
+                                            <input type="range" min="0" max="255" class="slider" id="myRangeRed" value={allVariables.lips[2]} 
+                                                onChange={ e => setAllVariables({ 
+                                                    ...allVariables, 
+                                                    lips: [allVariables.lips[0],allVariables.lips[1],e.target.value]
+                                                })}
+                                            />
                                         </div>
-                                    <button>+</button>
+                                    {/* <button>+</button> */}
                                 </View>
                             </tr>
                             <tr>EYEBROWS
                                 <View style={{flexDirection:'row', alignItems:'center'}}>
-                                    <button>-</button>
-                                        <div class="slidecontainer">
-                                            <input type="range" min="1" max="100" class="slider" id="myRangeRed"/>
+                                    {/* <button>-</button> */}
+                                    <div class="slidecontainer">
+                                            B: {allVariables.eyebrows[0]}
+                                            <input type="range" min="0" max="255" class="slider" id="myRangeBlue" value={allVariables.eyebrows[0]} 
+                                                onChange={ e => setAllVariables({ 
+                                                    ...allVariables, 
+                                                    eyebrows: [e.target.value,allVariables.eyebrows[1],allVariables.eyebrows[2]]
+                                                })}
+                                            />
                                         </div>
                                         <div class="slidecontainer">
-                                            <input type="range" min="1" max="100" class="slider" id="myRangeGreen"/>
+                                            G: {allVariables.eyebrows[1]}
+                                            <input type="range" min="0" max="255" class="slider" id="myRangeGreen" value={allVariables.eyebrows[1]} 
+                                                onChange={ e => setAllVariables({ 
+                                                    ...allVariables, 
+                                                    eyebrows: [allVariables.eyebrows[0],e.target.value,allVariables.eyebrows[2]]
+                                                })}
+                                            />
                                         </div>
                                         <div class="slidecontainer">
-                                            <input type="range" min="1" max="100" class="slider" id="myRangeBlue"/>
+                                            R: {allVariables.eyebrows[2]}
+                                            <input type="range" min="0" max="255" class="slider" id="myRangeRed" value={allVariables.eyebrows[2]} 
+                                                onChange={ e => setAllVariables({ 
+                                                    ...allVariables, 
+                                                    eyebrows: [allVariables.eyebrows[0],allVariables.eyebrows[1],e.target.value]
+                                                })}
+                                            />
                                         </div>
-                                    <button>+</button>
+                                    {/* <button>+</button> */}
                                 </View>
                             </tr>
                             <tr>EYES
                                 <View style={{flexDirection:'row', alignItems:'center'}}>
-                                    <button>-</button>
-                                        <div class="slidecontainer">
-                                            <input type="range" min="1" max="100" class="slider" id="myRangeRed"/>
+                                    {/* <button>-</button> */}
+                                    <div class="slidecontainer">
+                                            B: {allVariables.eyes[0]}
+                                            <input type="range" min="0" max="255" class="slider" id="myRangeBlue" value={allVariables.eyes[0]} 
+                                                onChange={ e => setAllVariables({ 
+                                                    ...allVariables, 
+                                                    eyes: [e.target.value,allVariables.eyes[1],allVariables.eyes[2]]
+                                                })}
+                                            />
                                         </div>
                                         <div class="slidecontainer">
-                                            <input type="range" min="1" max="100" class="slider" id="myRangeGreen"/>
+                                            G: {allVariables.eyes[1]}
+                                            <input type="range" min="0" max="255" class="slider" id="myRangeGreen" value={allVariables.eyes[1]} 
+                                                onChange={ e => setAllVariables({ 
+                                                    ...allVariables, 
+                                                    eyes: [allVariables.eyes[0],e.target.value,allVariables.eyes[2]]
+                                                })}
+                                            />
                                         </div>
                                         <div class="slidecontainer">
-                                            <input type="range" min="1" max="100" class="slider" id="myRangeBlue"/>
+                                            R: {allVariables.eyes[2]}
+                                            <input type="range" min="0" max="255" class="slider" id="myRangeRed" value={allVariables.eyes[2]} 
+                                                onChange={ e => setAllVariables({ 
+                                                    ...allVariables, 
+                                                    eyes: [allVariables.eyes[0],allVariables.eyes[1],e.target.value]
+                                                })}
+                                            />
                                         </div>
-                                    <button>+</button>
+                                    {/* <button>+</button> */}
                                 </View>
                             </tr>
                             <tr>

@@ -2,6 +2,7 @@ from distutils.log import debug
 from importlib import resources
 from flask import Flask, send_file, redirect
 
+import generatePixel
 import pyrebase
 config = {
   "apiKey": "AIzaSyCbZkvyvj1pm6ygYQjRil9usTR61GhNXiU",
@@ -29,8 +30,9 @@ app = Flask(__name__)
 def members():
     return {"members": ["member1","member2","member3"]}
 
-@app.route('/images/<resolution>/<bit>/<palette>')
-def get_image(resolution,bit,palette):
+@app.route('/images/<resolution>/<bit>/<palette>/<lips>/<eyebrows>/<eyes>')
+def get_image(resolution,bit,palette,lips,eyebrows,eyes):
+    generatePixel.colorFace(lips,eyebrows,eyes)
     generatePixel.resizeImage(resolution,bit,palette)
     # print(resolution, file=sys.stderr)
     return {"image_name": "shark.jpg"}
