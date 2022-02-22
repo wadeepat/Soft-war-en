@@ -2,7 +2,27 @@ import cv2
 import numpy as np
 from PIL import Image
 import sys
+import urllib.request
 import dlib 
+
+import pyrebase
+config = {
+  "apiKey": "AIzaSyCbZkvyvj1pm6ygYQjRil9usTR61GhNXiU",
+  "authDomain": "soft-war-en.firebaseapp.com",
+  "projectId": "soft-war-en",
+  "storageBucket": "soft-war-en.appspot.com",
+  "messagingSenderId": "202141520404",
+  "appId": "1:202141520404:web:5afe4e7f91a901fcda8d01",
+  "measurementId": "G-BZYGX0EBDD",
+  "databaseURL" : ""
+}
+firebase = pyrebase.initialize_app(config)
+storage = firebase.storage()
+auth = firebase.auth()
+path_on_cloud = "images/softwaren.png"
+email = "softend@gmai.com"
+passw = "soft123"
+user = auth.sign_in_with_email_and_password(email,passw)
 
 def createBox(img,points1,points2=[],scale=5,masked=False,cropped=True):
 
@@ -27,7 +47,10 @@ def colorFace(colorlips,coloreyebrows,coloreyes):
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
     
-    img = cv2.imread("../public_html/uploads/w1.jpg")
+    img_url = storage.child(path_on_cloud).get_url(user['idToken'])
+    urllib.request.urlretrieve(img_url,"test.jpg")
+
+    img = cv2.imread('test.jpg')
     imgOriginal = img.copy()
     imgGray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     faces = detector(imgGray)

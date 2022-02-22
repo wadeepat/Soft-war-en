@@ -2,6 +2,7 @@
 import React,{useState } from 'react';
 import { Link } from 'react-router-dom';
 import { storage } from "../firebase";
+import { useHistory } from "react-router-dom";
 const Upload = () => {
   const [image, setImage] = useState(null);
   const [url, setUrl] = useState("");
@@ -10,6 +11,19 @@ const Upload = () => {
     file:[],
     filepreview:null,
    });
+
+  //  const [allVariables, setAllVariables] = useState({
+  //     resolution: 64,
+  //     bit: 8,
+  //     palette: 'NONE',
+  //     lips: [0,0,0],
+  //     eyebrows: [0,0,0],
+  //     eyes: [0,0,0]
+  //   });
+
+  //  const resizeImage = async() => {
+  //     const res = await fetch(`/images/${allVariables.resolution}/${allVariables.bit}/${allVariables.palette}/${allVariables.lips}/${allVariables.eyebrows}/${allVariables.eyes}`);
+  //   }
 
   const handleChange = e => {
     if (e.target.files[0]) {
@@ -28,8 +42,9 @@ const Upload = () => {
     
   };
 
-  const handleUpload = () => {
-    var name = "mona-"+Date.now()+".png"
+  const handleUpload = async () => {
+    // var name = "mona-"+Date.now()+".png"
+    var name = "softwaren.png"
     const uploadTask = storage.ref(`images/${name}`).put(image);
     uploadTask.on(
       "state_changed",
@@ -53,6 +68,8 @@ const Upload = () => {
           });
       }
     );
+    // const history = await useHistory();
+    // await history.push("/home");
   };
 
   // console.log("image: ", image);

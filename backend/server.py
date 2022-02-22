@@ -42,10 +42,13 @@ def get_image(resolution,bit,palette,lips,eyebrows,eyes):
 def download_file():
     # pic = "../frontend/src/images/SOFTwarEN.png"
     # pic = storage.child(path_on_cloud).download("SOFTwarEN-1644247147331.png")
-    pic = storage.child(path_on_cloud).get_url(user['idToken'])
+    # pic = storage.child(path_on_cloud).get_url(user['idToken'])
     # # return redirect(pic)
     # # return send_from_directory(pic,"name.jpg")
-    return redirect(pic)
+
+    pic = "../frontend/src/images/SOFTwarEN.png"
+    return send_file(pic,as_attachment=True)
+    # return redirect(pic)
 
 if __name__ == "__main__":
     app.run(debug=True)

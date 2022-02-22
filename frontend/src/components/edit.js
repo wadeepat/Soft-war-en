@@ -2,11 +2,14 @@ import react, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import imagePath from '../images/SOFTwarEN.png'
 import { View} from 'react-native';
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 const Edit = () => {
     // const imagePath = '../../src/images/SOFTwarEN.jpg'
+    const storage = getStorage();
     const [imageName, setImageName] = useState("")
-    const [data, setData]  = useState([{}])
+    const [data, setData]  = useState(false)
+    const [imgOri, setImgOri]  = useState("")
     
     const [allVariables, setAllVariables] = useState({
         resolution: 64,
@@ -20,6 +23,7 @@ const Edit = () => {
     const resizeImage = async() => {
         const res = await fetch(`/images/${allVariables.resolution}/${allVariables.bit}/${allVariables.palette}/${allVariables.lips}/${allVariables.eyebrows}/${allVariables.eyes}`);
         const data = await res.json();
+        setData(true)
         setImageName(data)
     }
 
@@ -40,9 +44,21 @@ const Edit = () => {
         }
     }
 
-    // useEffect(() => {
-    //     resizeImage();
-    // }, [])
+    const delay = ms => new Promise(res => setTimeout(res, ms));
+    const wait = async () => {
+        await delay(1000);
+    };
+
+    useEffect(async () => {
+        await wait();
+        await getDownloadURL(ref(storage, 'images/softwaren.png'))
+        .then((url) => {
+            setImgOri(url)
+        })
+        .catch((error) => {
+            // Handle any errors
+        });
+    }, [])
 
     return(
         <>
@@ -68,7 +84,11 @@ const Edit = () => {
                     <tr>
                         <td width="50%" >
                             <div className="editPic">
+                            {data ? (
                                 <img src= {imagePath} width= "75%" className="edit-img"/>
+                            ) : (
+                                <img src= {imgOri} width= "75%" className="edit-img"/>
+                            )}
                             </div>
                         </td>
                         <td width="25%">
@@ -136,19 +156,6 @@ const Edit = () => {
                                     }             
                                     }>+</button>
                                 </View>
-                            </tr>
-                             
-                            <tr>
-                                <p>SIZE
-                                    <form>
-                                        <select name = "dropdown">
-                                            <option value = "25%">25%</option>
-                                            <option value = "50%">50%</option>
-                                            <option value = "75%">75%</option>
-                                            <option value = "100%">100%</option>
-                                        </select>
-                                    </form>
-                                </p>
                             </tr>
                             <tr>
                                 <p>PALETTE
@@ -267,11 +274,6 @@ const Edit = () => {
                                         </div>
                                     {/* <button>+</button> */}
                                 </View>
-                            </tr>
-                            <tr>
-                                <p></p>
-                                <button className="btn-undo">UNDO</button>
-                                <button className="btn-redo">REDO</button>
                             </tr>
                         </td>
                     </tr>
